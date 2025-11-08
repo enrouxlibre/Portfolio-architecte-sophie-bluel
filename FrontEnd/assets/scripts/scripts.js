@@ -1,8 +1,10 @@
+/* api stuff */
+
 const url = "http://localhost:5678/api";
 
-async function getWorks() {
+async function getData(endpoint) {
   try {
-    const response = await fetch(url + "/works", {
+    const response = await fetch(url + endpoint, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -17,29 +19,43 @@ async function getWorks() {
   } catch (error) {
     console.error(error.message);
   }
+}
+
+async function getWorks() {
+  return await getData("/works");
 }
 
 async function getCategories() {
+  return await getData("/categories");
+}
+
+async function login(email, password) {
   try {
-    const response = await fetch(url + "/categories", {
-      method: "GET",
+    const response = await fetch(url + "/users/login", {
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
+      body: JSON.stringify({ email: email, password: password }),
     });
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
     }
 
     const result = await response.json();
-    return result;
+    localStorage.setItem("token", result.token);
+    return true;
   } catch (error) {
     console.error(error.message);
   }
 }
 
-displayCategories();
-displayWorks();
+function logout() {
+  localStorage.removeItem("token");
+  window.location.href = "index.html";
+}
+
+/* DOM stuff */
 
 async function displayCategories() {
   let allWorksButton = document.getElementById("show_all_works");

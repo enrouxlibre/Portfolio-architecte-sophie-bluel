@@ -128,12 +128,6 @@ table {
   border-spacing: 0;
 }
 /** end reset css**/
-body {
-  max-width: 1140px;
-  margin: auto;
-  font-family: "Work Sans";
-  font-size: 14px;
-}
 header {
   display: flex;
   justify-content: space-between;
@@ -255,6 +249,11 @@ input[type="submit"] {
   width: 180px;
   text-align: center;
   border-radius: 60px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #0e2f28;
 }
 
 footer nav ul {
@@ -284,4 +283,127 @@ footer nav ul {
 .filter-buttons button.active {
   background-color: #1d6154;
   color: white;
+}
+#login-form {
+  width: 300px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #3d3d3d;
+}
+#login-form h2 {
+  margin-bottom: 20px;
+}
+#login-form input {
+  margin-bottom: 20px;
+  height: 40px;
+  font-size: 1em;
+  padding: 0;
+  border: 0;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  width: 100%;
+}
+#login-form label {
+  align-self: flex-start;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-family: "Work Sans";
+  font-weight: bold;
+}
+#login-form button {
+  font-family: "Syne";
+  font-weight: bold;
+  color: white;
+  background-color: #1d6154;
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+  padding: 10px;
+  width: 60%;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+#login-form button:hover {
+  background-color: #0e2f28;
+}
+#login-form a {
+  margin-top: 10px;
+}
+body {
+  background-color: #fffef8;
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-family: "Work Sans";
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  width: 100%;
+}
+footer {
+  width: 100%;
+  background: white;
+  padding-right: 50px;
+  box-sizing: border-box;
+}
+li.selected {
+  font-weight: bold;
+}
+nav li a {
+  text-decoration: none;
+  color: inherit;
+}
+#error-message {
+  color: red;
+}
+.edition-mode {
+  background-color: black;
+  color: white;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.edition-mode i {
+  color: white;
+  margin-right: 10px;
+  width: 15px;
+  height: 15px;
+}
+.section-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 0;
+}
+.section-header h2 {
+  margin: 0 !important;
+}
+.edition-option {
+  margin-left: 20px;
+  display: none;
+  cursor: pointer;
+}
+.edition-option i {
+  margin-right: 5px;
+}
+#logout {
+  display: none;
+}
+.edition-mode-active .edition-mode,
+.edition-mode-active .edition-option {
+  display: flex !important;
+}
+
+.edition-mode-active .filter-buttons,
+.edition-mode-active #login {
+  display: none !important;
+}
+.edition-mode-active #logout {
+  display: block !important;
 }
