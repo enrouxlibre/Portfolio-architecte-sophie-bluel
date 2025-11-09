@@ -15,7 +15,7 @@ document
         window.location.href = "index.html";
       } else {
         document.querySelector("#error-message").innerText =
-          "Login failed.\nPlease check your email and password.";
+          "La connexion a échoué. Veuillez vérifier votre e-mail et votre mot de passe.";
       }
     });
   });

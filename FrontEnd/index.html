@@ -66,7 +66,7 @@
         <section id="portfolio">
           <div class="section-header">
             <h2>Mes Projets</h2>
-            <span class="edition-option">
+            <span class="open-editor-modal">
               <i class="far fa-pen-to-square"></i>modifier
             </span>
           </div>
@@ -102,5 +102,45 @@
         </ul>
       </nav>
     </footer>
+    <dialog id="editor-modal">
+      <div class="modal-container photo-mode">
+        <div class="modal-nav">
+          <i class="fa-solid fa-times close-editor-modal"></i>
+          <i class="fa-solid fa-arrow-left back-button"></i>
+        </div>
+        <div class="modal-body modal-gallery">
+          <h3>Galerie photo</h3>
+          <div class="modal-gallery-main"></div>
+          <hr />
+          <div id="delete-message"></div>
+          <button class="add-photo-button">Ajouter une photo</button>
+        </div>
+        <form id="add-photo-form" class="modal-body modal-add-photo">
+          <h3>Ajout photo</h3>
+          <div class="modal-gallery"></div>
+          <label id="drop-zone" for="image-input">
+            <i class="fa-solid fa-image"></i>
+            <div class="button">+ Ajouter photo</div>
+            .jpg, .png : 4mo max
+          </label>
+          <input
+            type="file"
+            name="image"
+            id="image-input"
+            accept=".jpg, .png"
+            required
+          />
+          <label for="title-input">Titre</label>
+          <input type="text" name="title" id="title-input" required />
+          <label for="category-selector">Catégorie</label>
+          <select name="category" id="category-selector" required>
+            <option value=""></option>
+          </select>
+          <hr />
+          <div id="upload-message"></div>
+          <button type="submit" id="add-photo-submit" disabled>Valider</button>
+        </form>
+      </div>
+    </dialog>
   </body>
 </html>
