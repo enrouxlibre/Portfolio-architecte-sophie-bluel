@@ -102,5 +102,3 @@ if (localStorage.getItem("token")) {
 
 displayCategories(loggedIn);
 displayWorks(loggedIn);
-
-document.querySelector("#editor-modal").showModal();
