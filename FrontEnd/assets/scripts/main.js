@@ -48,17 +48,30 @@ if (localStorage.getItem("token")) {
     const files = e.dataTransfer ? e.dataTransfer.files : null;
     if (files && files.length === 1) {
       const file = files[0];
-      if (file.type === "image/png" || file.type === "image/jpeg") {
-        imageInput.files = files;
-        displayImage(file);
-        checkForm(addPhotoForm);
-      } else {
-        alert("Veuillez envoyer une image au format JPG ou PNG.");
+      try {
+        if (validateImage(file)) {
+          imageInput.files = files;
+          displayImage(file);
+          checkForm(addPhotoForm);
+        }
+      } catch (error) {
+        uploadMessageDiv.innerText = error;
+        uploadMessageDiv.style.color = "red";
       }
     }
   });
   imageInput.addEventListener("change", function () {
-    displayImage(imageInput.files[0]);
+    const file = imageInput.files[0];
+    try {
+      if (validateImage(file)) {
+        displayImage(file);
+        checkForm(addPhotoForm);
+      }
+    } catch (error) {
+      imageInput.value = "";
+      uploadMessageDiv.innerText = error;
+      uploadMessageDiv.style.color = "red";
+    }
   });
 
   let addPhotoForm = document.querySelector("#add-photo-form");

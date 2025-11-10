@@ -445,7 +445,7 @@ dialog {
 }
 .modal-body hr {
   width: 100%;
-  margin: 40px 0;
+  margin: 40px 0 20px 0;
   border-top: 1px solid #b3b3b3;
 }
 .modal-nav {
@@ -539,6 +539,5 @@ dialog {
 }
 #upload-message,
 #delete-message {
-  margin-top: -15px;
-  margin-bottom: 15px;
+  margin: 20px 0 10px 0;
 }

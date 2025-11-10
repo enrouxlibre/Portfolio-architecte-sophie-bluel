@@ -226,3 +226,16 @@ function displayImage(file) {
   dropZone.innerHTML = "";
   dropZone.appendChild(img);
 }
+
+function validateImage(file) {
+  if (file.type === "image/png" || file.type === "image/jpeg") {
+    if (file.size < 4194304) {
+      return true;
+    } else {
+      throw new Error("Votre image doit faire moins de 4 Mo.");
+    }
+  } else {
+    throw new Error("Veuillez envoyer une image au format JPG ou PNG.");
+  }
+  return false;
+}
