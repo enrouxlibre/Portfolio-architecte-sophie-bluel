@@ -128,15 +128,24 @@ table {
   border-spacing: 0;
 }
 /** end reset css**/
+
+/* ========================================
+   LAYOUT & TYPOGRAPHY
+   ======================================== */
+
+/* Header layout with logo and navigation */
 header {
   display: flex;
   justify-content: space-between;
   margin: 50px 0;
 }
+
+/* Section spacing */
 section {
   margin: 50px 0;
 }
 
+/* Main heading with name and subtitle */
 h1 {
   display: flex;
   flex-direction: column;
@@ -152,25 +161,40 @@ h1 > span {
   letter-spacing: 0.1em;
 }
 
+/* Section headings */
 h2 {
   font-family: "Syne";
   font-weight: 700;
   font-size: 30px;
   color: #1d6154;
 }
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+
+/* Horizontal navigation menu */
 nav ul {
   display: flex;
   align-items: center;
   list-style-type: none;
 }
+
+/* Navigation menu items */
 nav li {
   padding: 0 10px;
   font-size: 1.2em;
 }
 
+/* Hover effect on navigation items */
 li:hover {
   color: #b1663c;
 }
+
+/* ========================================
+   INTRODUCTION SECTION
+   ======================================== */
+
 #introduction {
   display: flex;
   align-items: center;
@@ -194,10 +218,18 @@ li:hover {
 #introduction p {
   margin-bottom: 0.5em;
 }
+
+/* ========================================
+   PORTFOLIO SECTION
+   ======================================== */
+
+/* Portfolio section heading */
 #portfolio h2 {
   text-align: center;
   margin-bottom: 1em;
 }
+
+/* Gallery grid layout for works */
 .gallery {
   width: 100%;
   display: grid;
@@ -206,16 +238,24 @@ li:hover {
   grid-row-gap: 20px;
 }
 
+/* Gallery images with consistent sizing */
 .gallery img {
   width: 100%;
   max-height: 500px;
   object-fit: cover;
   height: 100%;
 }
+
+/* ========================================
+   CONTACT SECTION
+   ======================================== */
+
+/* Contact section container */
 #contact {
   width: 50%;
   margin: auto;
 }
+
 #contact > * {
   text-align: center;
 }
@@ -243,6 +283,11 @@ li:hover {
   box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
+/* ========================================
+   BUTTONS & FORMS
+   ======================================== */
+
+/* Submit button styling */
 input[type="submit"] {
   font-family: "Syne";
   font-weight: 700;
@@ -255,9 +300,14 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+/* Submit button hover effect */
 input[type="submit"]:hover {
   background-color: #0e2f28;
 }
+
+/* ========================================
+   FOOTER
+   ======================================== */
 
 footer nav ul {
   display: flex;
@@ -265,6 +315,11 @@ footer nav ul {
   margin: 2em;
 }
 
+/* ========================================
+   CATEGORY FILTER BUTTONS
+   ======================================== */
+
+/* Filter buttons container */
 .filter-buttons {
   display: flex;
   justify-content: center;
@@ -272,6 +327,8 @@ footer nav ul {
   margin: 20px 0;
   gap: 10px;
 }
+
+/* Individual filter button styling */
 .filter-buttons button {
   border: none;
   padding: 10px;
@@ -283,10 +340,17 @@ footer nav ul {
   font-weight: bold;
   color: #1d6154;
 }
+
+/* Active filter button state */
 .filter-buttons button.active {
   background-color: #1d6154;
   color: white;
 }
+
+/* ========================================
+   LOGIN FORM
+   ======================================== */
+
 #login-form {
   width: 300px;
   margin: 100px auto;
@@ -298,6 +362,8 @@ footer nav ul {
 #login-form h2 {
   margin-bottom: 20px;
 }
+
+/* Form inputs styling (login and add photo forms) */
 #login-form input,
 #add-photo-form input,
 #add-photo-form select {
@@ -309,6 +375,8 @@ footer nav ul {
   box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
   width: 100%;
 }
+
+/* Form labels styling */
 #login-form label,
 #add-photo-form label {
   align-self: flex-start;
@@ -316,6 +384,8 @@ footer nav ul {
   font-size: 14px;
   font-family: "Work Sans";
 }
+
+/* Form and modal buttons */
 #login-form button,
 #editor-modal button {
   font-family: "Syne";
@@ -330,13 +400,21 @@ footer nav ul {
   font-size: 14px;
   margin-bottom: 10px;
 }
+/* Button hover effect */
 #login-form button:hover,
 #editor-modal button:hover {
   background-color: #0e2f28;
 }
+
+/* Forgot password link */
 #login-form a {
   margin-top: 10px;
 }
+
+/* ========================================
+   GLOBAL BODY STYLES
+   ======================================== */
+
 body {
   background-color: #fffef8;
   min-height: 100vh;
@@ -347,27 +425,43 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
+
+/* Main content container with max width */
 .container {
   max-width: 1140px;
   margin: 0 auto;
   width: 100%;
 }
+
+/* Footer styling */
 footer {
   width: 100%;
   background: white;
   padding-right: 50px;
   box-sizing: border-box;
 }
+
+/* Selected navigation item */
 li.selected {
   font-weight: bold;
 }
+
+/* Remove default link styling in navigation */
 nav li a {
   text-decoration: none;
   color: inherit;
 }
+
+/* Error message styling */
 #error-message {
   color: red;
 }
+
+/* ========================================
+   EDITION MODE (ADMIN)
+   ======================================== */
+
+/* Edition mode banner at top of page */
 .edition-mode {
   background-color: black;
   color: white;
@@ -376,47 +470,69 @@ nav li a {
   align-items: center;
   display: none;
 }
+/* Edition mode icon */
 .edition-mode i {
   color: white;
   margin-right: 10px;
   width: 15px;
   height: 15px;
 }
+
+/* Section header with edit button */
 .section-header {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 100px 0;
 }
+
 .section-header h2 {
   margin: 0 !important;
 }
+
+/* Edit/modify button (hidden by default) */
 .open-editor-modal {
   margin-left: 20px;
   display: none;
   cursor: pointer;
 }
+
 .open-editor-modal i {
   margin-right: 5px;
 }
+
+/* Logout link (hidden by default) */
 #logout {
   display: none;
 }
+
+/* Show/hide elements when edition mode is active */
 .edition-mode-active .edition-mode,
 .edition-mode-active .open-editor-modal {
   display: flex !important;
 }
 
+/* Hide filter buttons and login link in edition mode */
 .edition-mode-active .filter-buttons,
 .edition-mode-active #login {
   display: none !important;
 }
+
+/* Show logout link in edition mode */
 .edition-mode-active #logout {
   display: block !important;
 }
+
+/* ========================================
+   MODAL DIALOG
+   ======================================== */
+
+/* Modal backdrop */
 dialog::backdrop {
   background: rgba(0, 0, 0, 0.3);
 }
+
+/* Modal dialog container */
 dialog {
   background: white;
   border-radius: 10px;
@@ -424,10 +540,14 @@ dialog {
   padding: 0;
   width: 630px;
 }
+
+/* Modal icons (close, back) */
 #editor-modal i {
   cursor: pointer;
   font-size: 20px;
 }
+
+/* Modal content body */
 .modal-body {
   display: flex;
   flex-direction: column;
@@ -435,6 +555,8 @@ dialog {
   margin: auto;
   width: 420px;
 }
+
+/* Modal headings */
 .modal-body h3 {
   font-family: "Work Sans";
   font-weight: 400;
@@ -442,47 +564,69 @@ dialog {
   text-align: center;
   margin: 50px 0;
 }
+
+/* Modal dividers */
 .modal-body hr {
   width: 100%;
   margin: 40px 0 20px 0;
   border-top: 1px solid #b3b3b3;
 }
+
+/* Modal navigation (close and back buttons) */
 .modal-nav {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
 }
+
+/* Modal container padding */
 .modal-container {
   padding: 10px;
 }
+
+/* Hide add photo view and back button by default */
 .modal-container .modal-add-photo,
 .modal-container .back-button {
   display: none;
 }
+
+/* Show add photo view in photo mode */
 .modal-container.photo-mode .modal-add-photo {
   display: flex !important;
 }
+
+/* Show back button in photo mode */
 .modal-container.photo-mode .back-button {
   display: block !important;
 }
+
+/* Hide gallery view in photo mode */
 .modal-container.photo-mode .modal-gallery {
   display: none !important;
 }
+
+/* Modal gallery grid */
 .modal-gallery-main {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 10px;
 }
+
+/* Modal gallery images */
 .modal-gallery-main img {
   object-fit: cover;
   width: 100%;
   max-height: 100px;
   height: 100%;
 }
+
+/* Modal gallery item container */
 .modal-gallery-main figure {
   position: relative;
 }
+
+/* Delete icon overlay on gallery items */
 .modal-gallery-main .delete-icon {
   position: absolute;
   top: 5px;
@@ -493,6 +637,12 @@ dialog {
   cursor: pointer;
   font-size: 10px !important;
 }
+
+/* ========================================
+   FILE UPLOAD DROP ZONE
+   ======================================== */
+
+/* Drop zone for file uploads */
 #drop-zone {
   background-color: #e8f1f6;
   display: flex;
@@ -507,6 +657,8 @@ dialog {
   font-size: 10px !important;
   margin-bottom: 30px !important;
 }
+
+/* Add photo button inside drop zone */
 #drop-zone .button {
   border: none;
   padding: 15px;
@@ -520,29 +672,43 @@ dialog {
   width: 35%;
   text-align: center;
 }
+
+/* Button hover effect */
 #drop-zone .button:hover {
   background-color: #b9c5cc;
 }
+
+/* Image icon in drop zone */
 #drop-zone i {
   font-size: 75px;
   color: #b9c5cc;
 }
+
+/* Preview image in drop zone */
 #drop-zone img {
   max-height: 200px;
   max-width: 420px;
   object-fit: contain;
   margin: -20px 0;
 }
+
+/* Hide native file input */
 #add-photo-form input[type="file"] {
   display: none;
 }
+
+/* Disabled submit button styling */
 #add-photo-form button:disabled {
   background-color: #a7a7a7;
 }
+
+/* Success/error messages */
 #upload-message,
 #delete-message {
   margin: 10px 0 20px 0;
 }
+
+/* Link color */
 a {
   color: #3d3d3d;
 }
