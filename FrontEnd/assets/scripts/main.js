@@ -13,6 +13,11 @@ if (localStorage.getItem("token")) {
     .addEventListener("click", () => {
       document.querySelector("#editor-modal").close();
     });
+  document.querySelector("#editor-modal").addEventListener("click", (event) => {
+    if (event.target == document.querySelector("#editor-modal")) {
+      document.querySelector("#editor-modal").close();
+    }
+  });
   document.querySelector(".open-editor-modal").addEventListener("click", () => {
     document.querySelector("#editor-modal").showModal();
   });
@@ -115,3 +120,9 @@ if (localStorage.getItem("token")) {
 
 displayCategories(loggedIn);
 displayWorks(loggedIn);
+
+const logoutLink = document.querySelector("#logout a");
+logoutLink.addEventListener("click", function (e) {
+  e.preventDefault();
+  logout();
+});

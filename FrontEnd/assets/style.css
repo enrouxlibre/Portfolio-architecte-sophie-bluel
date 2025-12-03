@@ -421,8 +421,7 @@ dialog {
   background: white;
   border-radius: 10px;
   border: 0;
-}
-#editor-modal {
+  padding: 0;
   width: 630px;
 }
 #editor-modal i {
@@ -453,6 +452,9 @@ dialog {
   flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
+}
+.modal-container {
+  padding: 10px;
 }
 .modal-container .modal-add-photo,
 .modal-container .back-button {
@@ -541,6 +543,6 @@ dialog {
 #delete-message {
   margin: 10px 0 20px 0;
 }
-a{
-  color:#3d3d3d;
+a {
+  color: #3d3d3d;
 }
