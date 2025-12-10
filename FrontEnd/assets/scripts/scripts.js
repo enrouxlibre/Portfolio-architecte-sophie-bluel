@@ -306,7 +306,12 @@ function checkForm(form) {
   });
 
   // Enable/disable submit button based on validation
-  submitButton.disabled = !result;
+  if (result) {
+    submitButton.classList.remove("disabled");
+  } else {
+    submitButton.classList.add("disabled");
+  }
+
   return result;
 }
 

@@ -174,6 +174,16 @@ if (localStorage.getItem("token")) {
       }
     });
   });
+
+  const addPhotoButton = addPhotoForm.querySelector("[type='submit']");
+  addPhotoButton.addEventListener("click", function (e) {
+    if (addPhotoButton.classList.contains("disabled")) {
+      e.preventDefault();
+      uploadMessageDiv.innerText =
+        "Veuillez remplir tous les champs du formulaire.";
+      uploadMessageDiv.style.color = "red";
+    }
+  });
 }
 
 /* ========================================

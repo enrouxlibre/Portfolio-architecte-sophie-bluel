@@ -698,7 +698,7 @@ dialog {
 }
 
 /* Disabled submit button styling */
-#add-photo-form button:disabled {
+#add-photo-form button.disabled {
   background-color: #a7a7a7;
 }
 
