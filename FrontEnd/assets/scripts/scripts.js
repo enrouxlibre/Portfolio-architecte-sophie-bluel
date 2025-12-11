@@ -248,16 +248,18 @@ function addWorkToModal(work, modalGallery) {
 
   // Add click handler to delete work
   deleteIcon.addEventListener("click", (event) => {
-    deleteWork(work.id).then((success) => {
-      if (success) {
-        // Refresh works display after successful deletion
-        displayWorks(true);
-      } else {
-        // Show error message
-        deleteMessageDiv.innerHTML = "La suppression a échoué.";
-        deleteMessageDiv.style.color = "red";
-      }
-    });
+    if (confirm("Voulez-vous vraiment supprimer ce projet ?")) {
+      deleteWork(work.id).then((success) => {
+        if (success) {
+          // Refresh works display after successful deletion
+          displayWorks(true);
+        } else {
+          // Show error message
+          deleteMessageDiv.innerHTML = "La suppression a échoué.";
+          deleteMessageDiv.style.color = "red";
+        }
+      });
+    }
   });
 
   figure.appendChild(img);
